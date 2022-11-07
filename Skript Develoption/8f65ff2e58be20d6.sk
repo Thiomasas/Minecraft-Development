@@ -1,0 +1,37 @@
+if entity's name is "지쳐보이는 광부":
+        if {NPC.%player%.tlibrarian} is true:
+            if {_NPC.%player%.miner1} is 0:
+                send "&7??? : &7&l헉...헉... 하루종일 돌을 치워도 막힌 입구가 뚫리지 않다니.... 저 좀비들은 다 뭐야..." to player
+                add 1 to {_NPC.%player%.miner1}
+            if {_NPC.%player%.miner1} is 1:
+                wait 3 seconds
+                send "&7그런데....자네는 어디에서 온건가...?" to player
+                add 1 to {_NPC.%player%.miner1}
+            if {_NPC.%player%.miner1} is 2:
+                wait 3 seconds
+                send "&a%player% : 네? 동굴이 막혀있다뇨? 분명 낡기는 했지만 저기....
+                add 1 to {_NPC.%player%.miner1}
+            if {_NPC.%player%.miner1} is 3:
+                wait 3 seconds
+                send "&7흠...? 아 저기 말인가? 저곳은 근처에 위험한 용암이 있을건데...어떻게 들어온거지?" to player
+                add 1 to {_NPC.%player%.miner1}
+            if {_NPC.%player%.miner1} is 4:
+                wait 3 seconds
+                send "&a%player% : 그...광산 입구에서 파는 마법서로 왔습니다만..." to player
+                add 1 to {_NPC.%player%.miner1}
+            if {_NPC.%player%.miner1} is 5:
+                wait 3 seconds
+                send "&7그런가...? 나도 그렇게 오게 됬다만... 혹시 같이 출구를 찾아보겠나?" to player
+                set {_NPC.%player%.miner1} to 0
+                set {NPC.%player%.miner1} to false
+				
+if entity's name is "긴장해보이는 광부":
+        if {NPC.%player%.tlibrarian} is true:
+            if {_NPC.%player%.miner2} is 0:
+                send "&7빌어먹을! 하루종일 좀비를 때려잡아도 계속 나와!" to player
+                add 1 to {_NPC.%player%.miner1}
+            if {_NPC.%player%.miner1} is 1:
+                wait 3 seconds
+                send "&7후..." to player
+                set {_NPC.%player%.miner1} to 0
+                set {NPC.%player%.miner1} to false

@@ -1,0 +1,13 @@
+#Made by Ys
+
+on death of player:
+	set {ControlDeath.%victim%.LocDead} to %victim%'s location
+
+on death of player:
+	if attacker is player:
+		message to %attacker% "§a당신은 %attacker's tool%을(를) 사용하여 %victim%님을 죽였습니다."
+		broadcast "§6%attacker%님이 %attcker's tool%을(를) 사용하여 %victim%님을 죽였습니다."
+		
+on death of player:
+	if attacker is zombie:
+		broadcast "§6%victim%님이 좀비에게 물려죽었습니다."

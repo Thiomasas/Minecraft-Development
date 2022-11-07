@@ -1,0 +1,7 @@
+# 서버관리에 필요한 기본적인 변수 및 함수 관리 스크립트 파일입니다.
+# Mady By Thiomasas
+
+
+every 1 seconds:
+	loop all players
+		execute console command "spawnpoint 14 -52 -5"

@@ -1,0 +1,450 @@
+
+# Made By Thiomasas
+
+variables:
+	{_NPC.%player%.librarian} = 0
+
+variables:
+	{NPC.%player%.tlibrarian} = true
+
+command /menu:
+	trigger:
+		open chest with 3 rows named "&8토마스 야생 서버 매뉴" to player
+		set slot integers between 0 and 8 of current inventory of player to cyan stained glass pane named " "
+		set slot integers between 17 and 25 of current inventory of player to cyan stained glass pane named " "
+		set slot 9 of current inventory of player to cyan stained glass pane named " "
+		set slot 11 of current inventory of player to cyan stained glass pane named " "
+		set slot 13 of current inventory of player to cyan stained glass pane named " "
+		set slot 15 of current inventory of player to cyan stained glass pane named " "
+		set slot 26 of current inventory of player to barrier named "&c이전 메뉴로 이동" with lore "&c이전 메뉴로 이동합니다."
+		set slot 10 of current inventory of player to compass named "&a내부 서버 이동기" with lore "&e내부 서버 이동기 메뉴를 엽니다!"
+		set slot 12 of current inventory of player to writable book named "&d서버 도움말" with lore "&e서버의 도움말 메뉴를 엽니다!"
+		set slot 14 of current inventory of player to repeater named "&c서버 유틸리티 툴" with lore "&e서버 내부의 다양한 기능을 사용합니다."
+		set slot 16 of current inventory of player to chest named "&b서버 상점" with lore "&e서버에 필요한 기능 및 아이템을 판매하는 상점입니다."
+
+on inventory click:
+	if inventory name of event-inventory contains "&8토마스 야생 서버 매뉴":    # 토마스 서버 전체 메뉴
+		if clicked slot is 10:
+			cancel event
+			wait 0.25 seconds
+			open chest with 3 rows named "&a내부 서버 이동기" to player
+			set slot integers between 0 and 8 of current inventory of player to light green stained glass pane named " "
+			set slot integers between 17 and 25 of current inventory of player to light green stained glass pane named " "
+			set slot 9 of current inventory of player to light green stained glass pane named " "
+			set slot 11 of current inventory of player to light green stained glass pane named " "
+			set slot 13 of current inventory of player to light green stained glass pane named " "
+			set slot 15 of current inventory of player to light green stained glass pane named " "
+			set slot 10 of current inventory of player to grass block named "&a메인 반야생 서버" with lore "&e클릭해서 메인 반야생 서버로 접속합니다." 	
+			set slot 12 of current inventory of player to bedrock named "&8메인 반야생 보호구역" with lore "&e클릭해서 반야생 서버의 부호구역으로 접속합니다!"
+			set slot 14 of current inventory of player to spyglass named "&9랜덤위치 텔레포트" with lore "&e클릭해서 랜덤한 위치의 반야생서버로 접속합니다."
+			set slot 16 of current inventory of player to end crystal named "&c토마스 pvp서버" with lore "&e클랙해서 토마스 서버의 PVP 서버로 접속합니다."
+			set slot 26 of current inventory of player to arrow named "&c이전 메뉴로 이동" with lore "&c이전 메뉴로 이동합니다."
+		if clicked slot is 12:
+			cancel event
+			wait 0.25 seconds
+			open chest with 3 rows named "&d토마스 서버 도움말 메뉴" to player
+			set slot integers between 0 and 8 of current inventory of player to yellow stained glass pane named " "
+			set slot integers between 17 and 25 of current inventory of player to yellow stained glass pane named " "
+			set slot 9 of current inventory of player to yellow stained glass pane named " "
+			set slot 11 of current inventory of player to yellow stained glass pane named " "
+			set slot 13 of current inventory of player to yellow stained glass pane named " "
+			set slot 15 of current inventory of player to yellow stained glass pane named " "
+			set slot 10 of current inventory of player to paper named "&b토마스 야생 서버 디스코드" with lore "&e클릭하면 나옵니다."
+			set slot 12 of current inventory of player to book named "&6토마스 야생 서버 규칙 열람" with lore "&e클릭하면 열람합니다."
+			set slot 14 of current inventory of player to nametag named "&3개발자 및 운영자 연락처" with lore "&e클릭하면 열거합니다."
+			set slot 16 of current inventory of player to spyglass named "&7현재 시각 : &6%now%"
+			set slot 26 of current inventory of player to arrow named "&c이전 메뉴로 이동" with lore "&c이전 메뉴로 이동합니다."
+		if clicked slot is 14:
+			cancel event
+			wait 0.25 seconds
+			open chest with 5 rows named "&c토마스 서버 유틸리티 툴" to player
+			set slot integers between 0 and 8 of current inventory of player to pink stained glass pane named " "
+			set slot integers between 36 and 43 of current inventory of player to pink stained glass pane named " "
+			set slot integers between 18 and 26 of current inventory of player to pink stained glass pane named " "
+			set slot 9 of current inventory of player to pink stained glass pane named " "
+			set slot 18 of current inventory of player to pink stained glass pane named " "
+			set slot 27 of current inventory of player to pink stained glass pane named " "
+			set slot 36 of current inventory of player to pink stained glass pane named " "
+			set slot 17 of current inventory of player to pink stained glass pane named " "
+			set slot 26 of current inventory of player to pink stained glass pane named " "
+			set slot 35 of current inventory of player to pink stained glass pane named " "
+			set slot 12 of current inventory of player to pink stained glass pane named " "
+			set slot 14 of current inventory of player to pink stained glass pane named " "
+			set slot 35 of current inventory of player to pink stained glass pane named " "
+			set slot 29 of current inventory of player to pink stained glass pane named " "
+			set slot 31 of current inventory of player to pink stained glass pane named " "
+			set slot 34 of current inventory of player to pink stained glass pane named " "
+			set slot 44 of current inventory of player to arrow named "&c이전 메뉴로 이동" with lore "&c이전 메뉴로 이동합니다."
+			set slot 10 of current inventory of player to redstone torch named "&c서버 나가기" with lore "&e클릭하면 서버를 나갑니다."
+			set slot 11 of current inventory of player to fern named "&a개인 핑 최적화하기" with lore "&e클릭하면 개인 핑을 최적화 합니다."
+			set slot 13 of current inventory of player to oxeye daisy named "&7구원기회 사용하기" with lore "&e/salvation 효과를 즉석에서 사용합니다. %nl% &c[주의] 구원기회는 단한번입니다."
+			set slot 15 of current inventory of player to compass named "&3서버 건의 하기" with lore "&e서버 담당자에게 건의를 올립니다."
+			set slot 16 of current inventory of player to warped fungus on a stick named "&c유저 신고하기" with lore "&e범법을 저지른 유저를 신고합니다."
+			set slot 28 of current inventory of player to diamond shovel named "&3집 지정하기" with lore "&e현재 당신의 위치를 당신의 집으로 지정합니다. &c표지판에 지정하고자 하는 %nl% &c집의 번호를 적어주세요. 최대 3까지 가능합니다."
+			set slot 29 of current inventory of player to wooden hoe named "&a집으로 이동하기" woth lore "&e당신의 집으로 이동합니다. 표지판에 이동하고자 하는 집의 번호를 적어주세요."
+			set slot 30 of current inventory of player to golden axe named "&c집 삭제하기" with lore "&e당신의 집을 삭제합니다. %nl% &c표지판에 당신이 삭제하고자 하는 집의 %nl% 번호를 적어주세요. %nl% &c해당 명령은 영구적입니다."
+			set slot 32 of current inventory of player to clock named "&3스폰 설정하기" with lore "&e당신의 스폰을 설정합니다."
+			set slot 33 of current inventory of player to compass named "&c스폰 삭제하기" with lore "&e당신의 스폰을 삭제합니다. %nl% &c스폰이 삭제될 경우, 보호구역에서 리스폰 됩니다."
+		if clicked slot is 0:
+			cancel event
+		if clicked slot is 1:
+			cancel event
+		if clicked slot is 2:
+			cancel event
+		if clicked slot is 3:
+			cancel event
+		if clicked slot is 4:
+			cancel event
+		if clicked slot is 5:
+			cancel event
+		if clicked slot is 6:
+			cancel event
+		if clicked slot is 7:
+			cancel event
+		if clicked slot is 8:
+			cancel event
+		if clicked slot is 17:
+			cancel event
+		if clicked slot is 18:
+			cancel event
+		if clicked slot is 19:
+			cancel event
+		if clicked slot is 20:
+			cancel event
+		if clicked slot is 21:
+			cancel event
+		if clicked slot is 22:
+			cancel event
+		if clicked slot is 23:
+			cancel event
+		if clicked slot is 24:
+			cancel event
+		if clicked slot is 25:
+			cancel event
+		if clicked slot is 9:
+			cancel event
+		if clicked slot is 11:
+			cancel event
+		if clicked slot is 13:
+			cancel event
+		if clicked slot is 15:
+			cancel event
+		if clicked slot is 16:
+			cancel event
+			wait 0.25 seconds
+			open chest with 3 rows named "&b토마스 서버 상점" to player
+			set slot 11 of current inventory of player to chest named "&e바이트 상점" with lore "&a바이트로 이용가능한 상점을 오픈합니다."
+			set slot 15 of current inventory of player to ender chest named "&3크레딧 상점" with lore "&9크레딧으로 이용가능한 상점을 오픈합니다."
+			set slot integers between 0 and 8 of current inventory of player to light gray stained glass pane named " "
+			set slot integers between 17 and 25 of current inventory of player to light gray stained glass pane named " "
+			set slot 9 of current inventory of player to light gray stained glass pane named " "
+			set slot 10 of current inventory of player to light gray stained glass pane named " "
+			set slot 13 of current inventory of player to light gray stained glass pane named " "
+			set slot 12 of current inventory of player to light gray stained glass pane named " "
+			set slot 14 of current inventory of player to light gray stained glass pane named " "
+			set slot 16 of current inventory of player to light gray stained glass pane named " "
+			set slot 26 of current inventory of player to arrow named "&c이전 메뉴로 이동" with lore "&c이전 메뉴로 이동합니다."
+		if clicked slot is 26:
+			cancel event
+			close player's inventory
+
+			
+	if inventory name of event-inventory contains "&a내부 서버 이동기":  #토마스 서버 전체 메뉴 -> 내부 서버 이동기
+		if clicked slot is 10:
+			cancel event
+			wait 0.25 seconds
+			execute console command "mv tp %player% survival"
+			execute console command "mv confirm"
+			message "&a메인 반야생 서버로 접속하였습니다."
+			set {PlayerData.%player%.IsOnSurvival} to true
+		if clicked slot is 12:
+			cancel event
+			wait 0.25 seconds
+			execute op command "mv tp %player% survival"
+			execute op command "mv confirm"
+			execute op command "tp %player% 0 70 0"
+			message "&a반야생 서버의 보호구역으로 이동합니다."
+			set {PlayerData.%player%.IsOnSurvival} to true
+		if clicked slot is 26:
+			cancel event
+			execute player command "menu"
+		if clicked slot is 0:
+			cancel event
+		if clicked slot is 1:
+			cancel event
+		if clicked slot is 2:
+			cancel event
+		if clicked slot is 3:
+			cancel event
+		if clicked slot is 4:
+			cancel event
+		if clicked slot is 5:
+			cancel event
+		if clicked slot is 6:
+			cancel event
+		if clicked slot is 7:
+			cancel event
+		if clicked slot is 8:
+			cancel event
+		if clicked slot is 17:
+			cancel event
+		if clicked slot is 18:
+			cancel event
+		if clicked slot is 19:
+			cancel event
+		if clicked slot is 20:
+			cancel event
+		if clicked slot is 21:
+			cancel event
+		if clicked slot is 22:
+			cancel event
+		if clicked slot is 23:
+			cancel event
+		if clicked slot is 24:
+			cancel event
+		if clicked slot is 25:
+			cancel event
+		if clicked slot is 9:
+			cancel event
+		if clicked slot is 11:
+			cancel event
+		if clicked slot is 13:
+			cancel event
+		if clicked slot is 15:
+			cancel event
+		if clicked slot is 16:
+			cancel event
+	if inventory name of event-inventory contains "&d토마스 서버 도움말 메뉴":  # 토마스 서버 전체 메뉴 -> 서버 도움말 메뉴
+		if clicked slot is 10:
+			cancel event
+			close player's inventory
+			message "&d서버 디스코드 링크 : <ttp:&e클릭해주세요!><url:https://discord.gg/CfZFhxt4ms>https://discord.gg/CfZFhxt4ms<reset> %nl% &b과도한 메세지 도배 또는 멤버 멘션은 삼가해주세요!"
+		if clicked slot is 12:
+			cancel event
+			message "&c그냥 평범한 사람과 같이 행동 하면 됨 ㅇㅋ?"
+		if clicked slot is 14:
+			cancel event
+			close player's inventory
+			message "&c멘션 도배는 삼가해주세요! &e디스코드 아이디 : &6Thiomasas7385"
+		if clicked slot is 16:
+			cancel event
+			close player's inventory
+			message "&6지금 시각은 %now%시 입니다."
+		if clicked slot is 26:
+			cancel event
+			execute player command "menu"
+		if clicked slot is 0:
+			cancel event
+		if clicked slot is 1:
+			cancel event
+		if clicked slot is 2:
+			cancel event
+		if clicked slot is 3:
+			cancel event
+		if clicked slot is 4:
+			cancel event
+		if clicked slot is 5:
+			cancel event
+		if clicked slot is 6:
+			cancel event
+		if clicked slot is 7:
+			cancel event
+		if clicked slot is 8:
+			cancel event
+		if clicked slot is 17:
+			cancel event
+		if clicked slot is 18:
+			cancel event
+		if clicked slot is 19:
+			cancel event
+		if clicked slot is 20:
+			cancel event
+		if clicked slot is 21:
+			cancel event
+		if clicked slot is 22:
+			cancel event
+		if clicked slot is 23:
+			cancel event
+		if clicked slot is 24:
+			cancel event
+		if clicked slot is 25:
+			cancel event
+		if clicked slot is 9:
+			cancel event
+		if clicked slot is 11:
+			cancel event
+		if clicked slot is 13:
+			cancel event
+		if clicked slot is 15:
+			cancel event
+		if clicked slot is 16:
+			cancel event
+	if inventory name of event-inventory contains "&c토마스 서버 유틸리티 툴":
+		if clicked slot is 44:
+			cancel event
+			execute player command "menu"
+		if clicked slot is 0:
+			cancel event
+		if clicked slot is 1:
+			cancel event
+		if clicked slot is 2:
+			cancel event
+		if clicked slot is 3:
+			cancel event
+		if clicked slot is 4:
+			cancel event
+		if clicked slot is 5:
+			cancel event
+		if clicked slot is 6:
+			cancel event
+		if clicked slot is 7:
+			cancel event
+		if clicked slot is 8:
+			cancel event
+		if clicked slot is 36:
+			cancel event
+		if clicked slot is 18:
+			cancel event
+		if clicked slot is 27:
+			cancel event
+		if clicked slot is 36:
+			cancel event
+		if clicked slot is 17:
+			cancel event
+		if clicked slot is 26:
+			cancel event
+		if clicked slot is 35:
+			cancel event
+		if clicked slot is 29:
+			cancel event
+		if clicked slot is 31:
+			cancel event
+		if clicked slot is 37:
+			cancel event
+		if clicked slot is 38:
+			cancel event
+		if clicked slot is 39:
+			cancel event
+		if clicked slot is 40:
+			cancel event
+		if clicked slot is 41:
+			cancel event
+		if clicked slot is 42:
+			cancel event
+		if clicked slot is 43:
+			cancel event
+		if clicked slot is 9:
+			cancel event
+		if clicked slot is 19:
+			cancel event
+		if clicked slot is 20:
+			cancel event
+		if clicked slot is 21:
+			cancel event
+		if clicked slot is 22:
+			cancel event
+		if clicked slot is 23:
+			cancel event
+		if clicked slot is 24:
+			cancel event
+		if clicked slot is 25:
+			cancel event
+		if clicked slot is 26:
+			cancel event
+		if clicked slot is 12:
+			cancel event
+		if clicked slot is 14:
+			cancel event
+		if clicked slot is 34:
+			cancel event
+	if inventory name of event-inventory contains "&b토마스 서버 상점":
+		if clicked slot is 10:
+			cancel event
+
+
+on rightclick on entity:
+	if entity's name is "&6메인야생 서버":
+		execute console command "mv tp %player% survival"
+		execute console command "mv confirm"
+		teleport player to {Survival.%player%.Location}
+		message "&a메인야생 서버로 이동했습니다."
+		send title "&aSURVIVAL" with subtitle "&e메인야생 서버입니다!" to player
+	if entity's name is "&3PVP 서버":
+		execute console command "mv tp %player% pvp"
+		execute console command "mv confirm"
+		execute op command "tp 0 -4 15"
+		message "&a메인 PVP서버로 이동했습니다."
+		send title "&3Crystal PVP" with subtitle "&e메인 PVP 서버입니다!" to player
+	if entity's name is "&c어드민 개발 서버":
+		if player is op:
+			execute console command "mv tp %player% admin"
+			execute console command "mv confirm"
+			message "&a어드민 테스트 서버로 이동했습니다."
+			send title "&cAdministration" with subtitle "&e어드민 테스트 서버입니다!" to player
+	if entity's name is "&e수상한 사서":
+		if {NPC.%player%.tlibrarian} is true:
+			if {_NPC.%player%.librarian} is 0:
+				wait 3 seconds	
+				send "&7??? : &7&l반갑네.... 난 오랫동안 이곳을 지켜온 사서 제임스라네...." to player
+				add 1 to {_NPC.%player%.librarian}
+			if {_NPC.%player%.librarian} is 1:
+				wait 3 seconds
+				send "&7사서 톰 : &7&l내 소개를 했으니 자네도 소개를 하게나.. 자네 이름은 뭐지?" to player
+				add 1 to {_NPC.%player%.librarian}
+			if {_NPC.%player%.librarian} is 2:
+				wait 3 seconds
+				send "&a%player% : 어... 저는 %player%라고 합니다.... 반갑습니다." to player
+				add 1 to {_NPC.%player%.librarian}
+			if {_NPC.%player%.librarian} is 3:
+				wait 3 seconds
+				send "&7사서 톰 : &7&l그래서 나와 친구를 해줄수있겠나?" to player
+				add 1 to {_NPC.%player%.librarian}
+			if {_NPC.%player%.librarian} is 4:
+				wait 3 seconds
+				send "&a%player% : 네 그럼요 저와 친구가 되세요 ㅎ" to player
+				add 1 to {_NPC.%player%.librarian}
+			if {_NPC.%player%.librarian} is 5:
+				wait 3 seconds
+				send "&7사서 톰 : &7&l아이고 참 고맙네... 30년 동안 난 친구 한명도 없이 살았지.. 그 보상으로 내가 뭘 보여주겠네" to player
+				set {_NPC.%player%.librarian} to 0
+				set {NPC.%player%.tlibrarian} to false
+	if entity's name is "&e[ 키트 생성기 ]":
+		if player's world is "pvp":
+			send "&c키트 생성기가 열립니다." to player
+			open chest with 6 rows named "&c토마스 PVP 서버 키트 생성기" to player
+			set slot 0 of current inventory of player to netherite helmet of protection 4 and respiration 10 and mending and unbreaking 10 and respiration 10 and aqua affinity 10
+			set slot 1 of current inventory of player to netherite chestplate of protection 4 and mending and unbreaking 10
+			set slot 2 of current inventory of player to netherite leggings of protection 4 and mending and unbreaking 10
+			set slot 3 of current inventory of player to netherite boots of protection 4 and mending and unbreaking 10 and respiration 10 and depth strider 10 and feather falling 10
+			set slot 4 of current inventory of player to 64 of experience bottle
+			set slot 5 of current inventory of player to netherite helmet of blast protection 4 and respiration 10 and mending and unbreaking 10 and respiration 10 and aqua affinity 10
+			set slot 6 of current inventory of player to netherite chestplate of blast protection 4 and mending and unbreaking 10
+			set slot 7 of current inventory of player to netherite leggings of blast protection 4 and mending and unbreaking 10
+			set slot 8 of current inventory of player to netherite boots of blast protection 4 and mending and unbreaking 10 and respiration 10 and depth strider 10 and feather falling 10
+			set slot 9 of current inventory of player to diamond helmet of protection 7 and respiration 10 and mending and unbreaking 10 and respiration 10 and aqua affinity 10
+			set slot 10 of current inventory of player to diamond chestplate of protection 7 and mending and unbreaking 10
+			set slot 11 of current inventory of player to diamond leggings of protection 7 and mending and unbreaking 10
+			set slot 12 of current inventory of player to diamond boots of protection 7 and mending and unbreaking 10 and respiration 10 and depth strider 10 and feather falling 10
+			set slot 13 of current inventory of player to 64 of experience bottle
+			set slot 14 of current inventory of player to diamond helmet of blast protection 4 and respiration 10 and mending and unbreaking 10 and respiration 10 and aqua affinity 10
+			set slot 15 of current inventory of player to diamond chestplate of blast protection 4 and mending and unbreaking 10
+			set slot 16 of current inventory of player to diamond leggings of blast protection 4 and mending and unbreaking 10
+			set slot 17 of current inventory of player to diamond boots of blast protection 4 and mending and unbreaking 10 and respiration 10 and depth strider 10 and feather falling 10
+			set slot 18 of current inventory of player to netherite sword of sharpness 5 and knockback 1 and mending and unbreaking 10
+			set slot 19 of current inventory of player to netherite sword of sharpness 5 and knockback 2 and mending and unbreaking 10
+			set slot 20 of current inventory of player to diamond sword of sharpness 7 and knockback 1 and mending and unbreaking 10
+			set slot 21 of current inventory of player to diamond sword of sharpness 7 and knockback 2 and mending and unbreaking 10
+			set slot 22 of current inventory of player to 64 of golden apple
+			set slot 23 of current inventory of player to netherite pickaxe of efficiency 10 and fortune 10 and mending and unbreaking 10
+			
+
+command /gradients:
+	trigger:
+		send title formatted "<##40ffff>그<##3efdf4>라<##3ffeeb>데<##3ffee2>데<##3ffed8>이<##3ffecf>션<##3ffec5>테<##3ffebb>스<##3ffeb2>트" to player
+
+command /test:
+	trigger:
+		send title formatted "&c토<##de3f5e>마<##be3f7e>스 <##9e3f9e>야<##7e3fbe>생 <##5e3fde>서&9버" to player
+
+on explosion of end crystal:
+	summon tnt on player's location

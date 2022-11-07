@@ -1,0 +1,3 @@
+on join:
+	send title formatted "&c토<##de3f5e>마<##be3f7e>스 <##9e3f9e>야<##7e3fbe>생 <##5e3fde>서&9버" with subtitle "&e토마스 야생 서버입니다." to player
+	execute command "tp %player% 14 -52 -5"
