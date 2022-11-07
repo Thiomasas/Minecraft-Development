@@ -85,6 +85,24 @@ on inventory click:
 			set slot 30 of current inventory of player to golden axe named "&c집 삭제하기" with lore "&e당신의 집을 삭제합니다. %nl% &c표지판에 당신이 삭제하고자 하는 집의 %nl% 번호를 적어주세요. %nl% &c해당 명령은 영구적입니다."
 			set slot 32 of current inventory of player to clock named "&3스폰 설정하기" with lore "&e당신의 스폰을 설정합니다."
 			set slot 33 of current inventory of player to compass named "&c스폰 삭제하기" with lore "&e당신의 스폰을 삭제합니다. %nl% &c스폰이 삭제될 경우, 보호구역에서 리스폰 됩니다."
+		if clicked slot is 16:
+			cancel event
+			wait 0.25 seconds
+			open chest with 3 rows named "&b토마스 서버 상점" to player
+			set slot 11 of current inventory of player to chest named "&e바이트 상점" with lore "&a바이트로 이용가능한 상점을 오픈합니다."
+			set slot 15 of current inventory of player to ender chest named "&3크레딧 상점" with lore "&9크레딧으로 이용가능한 상점을 오픈합니다."
+			set slot integers between 0 and 8 of current inventory of player to light gray stained glass pane named " "
+			set slot integers between 17 and 25 of current inventory of player to light gray stained glass pane named " "
+			set slot 9 of current inventory of player to light gray stained glass pane named " "
+			set slot 10 of current inventory of player to light gray stained glass pane named " "
+			set slot 13 of current inventory of player to light gray stained glass pane named " "
+			set slot 12 of current inventory of player to light gray stained glass pane named " "
+			set slot 14 of current inventory of player to light gray stained glass pane named " "
+			set slot 16 of current inventory of player to light gray stained glass pane named " "
+			set slot 26 of current inventory of player to arrow named "&c이전 메뉴로 이동" with lore "&c이전 메뉴로 이동합니다."
+		if clicked slot is 26:
+			cancel event
+			close player's inventory
 		if clicked slot is 0:
 			cancel event
 		if clicked slot is 1:
@@ -129,24 +147,6 @@ on inventory click:
 			cancel event
 		if clicked slot is 15:
 			cancel event
-		if clicked slot is 16:
-			cancel event
-			wait 0.25 seconds
-			open chest with 3 rows named "&b토마스 서버 상점" to player
-			set slot 11 of current inventory of player to chest named "&e바이트 상점" with lore "&a바이트로 이용가능한 상점을 오픈합니다."
-			set slot 15 of current inventory of player to ender chest named "&3크레딧 상점" with lore "&9크레딧으로 이용가능한 상점을 오픈합니다."
-			set slot integers between 0 and 8 of current inventory of player to light gray stained glass pane named " "
-			set slot integers between 17 and 25 of current inventory of player to light gray stained glass pane named " "
-			set slot 9 of current inventory of player to light gray stained glass pane named " "
-			set slot 10 of current inventory of player to light gray stained glass pane named " "
-			set slot 13 of current inventory of player to light gray stained glass pane named " "
-			set slot 12 of current inventory of player to light gray stained glass pane named " "
-			set slot 14 of current inventory of player to light gray stained glass pane named " "
-			set slot 16 of current inventory of player to light gray stained glass pane named " "
-			set slot 26 of current inventory of player to arrow named "&c이전 메뉴로 이동" with lore "&c이전 메뉴로 이동합니다."
-		if clicked slot is 26:
-			cancel event
-			close player's inventory
 
 			
 	if inventory name of event-inventory contains "&a내부 서버 이동기":  #토마스 서버 전체 메뉴 -> 내부 서버 이동기
@@ -165,6 +165,15 @@ on inventory click:
 			execute op command "tp %player% 0 70 0"
 			message "&a반야생 서버의 보호구역으로 이동합니다."
 			set {PlayerData.%player%.IsOnSurvival} to true
+		if clicked slot is 14:
+			cancel event
+			wait 0.25 seconds
+			execute op command "tp %player% %{_Commands.RandomTP}%"
+			message "&a랜덤이동을 합니다."
+		if clicked slot is 16:
+			cancel event
+			wait 0.25 seconds
+			execute player command "pvp"
 		if clicked slot is 26:
 			cancel event
 			execute player command "menu"
