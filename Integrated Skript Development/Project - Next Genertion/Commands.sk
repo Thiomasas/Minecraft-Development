@@ -1,0 +1,261 @@
+
+# Made by Thiomasas
+
+command /optimization:
+    trigger:
+        if player is op:
+            message "§a서버의 몬스터를 모두 삭제했습니다."
+            execute op command "kill @e[type=!player,type=!minecraft:villager,type=!cow,type=!minecraft:sheep,type=!minecraft:pig,type=!minecraft:chicken,type=!minecraft:iron_golem,type=!minecraft:snow_golem,type=!minecraft:armor_stand,type=!minecraft:end_crystal,type=!ender_dragon,type=!item_frame]"
+            
+command /announcement [<text>]:
+    trigger:
+        if player is op:
+            message "§a서버에 공지를 올립니다."
+            broadcast "%nl% §e[ §9Notice §e] &e%arg-1% %nl% "
+        if player is not op:
+            message "§c당신은 관리자가 아니기 때문에 해당 명령어에 접근할 수 없습니다."        
+
+command /hamster:
+    trigger:
+        if player is op:
+            broadcast "§6§l햄스터 귀엽다는거 인정하는 사람 손!"
+        if player is not op:
+            message "§c당신은 관리자가 아니기 때문에 해당 명령어에 접근할 수 없습니다."
+
+command /opitem:
+    trigger:
+        if player is op:
+            message "§3§l%player%님에게 오피 전용 아이템이 지급되었습니다."
+            give 1 of netherite sword of sharpness 10 and smite 10 and knockback 2 and looting 10 and mending and unbreaking 10 to player
+            give 1 of netherite axe of sharpness 10 and smite 10 and knockback 2 and looting 10 and mending and unbreaking 10 and efficiency 10 and fortune 10 to player
+            give 1 of netherite pickaxe of efficiency 10 and fortune 10 and mending and unbreaking 10 to player
+            give 1 of netherite shovel of efficiency 10 and fortune 10 and mending and unbreaking 10 to player
+            equip player with netherite helmet of protection 4 and respiration 10 and mending and unbreaking 10 and blast protection 1 and respiration 10 and aqua affinity 10
+            equip player with netherite chestplate of protection 4 and mending and unbreaking 10 and blast protection 1
+            equip player with netherite leggings of protection 4 and mending and unbreaking 10 and blast protection 1
+            equip player with netherite boots of protection 4 and mending and unbreaking 10 and blast protection 1 and respiration 10 and depth strider 10 and feather falling 10
+            give 128 of golden apple to player
+            give 128 of end crystal to player
+            give 128 of obsidian to player
+            give 128 of respawn anchor to player
+            give 128 of glowstone to player
+            give 1 of elytra of mending and unbreaking 10 to player
+            give 192 of fireworks to player
+        if player is not op:
+            message "§c당신은 관리자가 아니기 때문에 해당 명령어에 접근할 수 없습니다."
+
+command /kit [<string>] [<string>]:
+    trigger:
+        if arg-1 is "basic":
+            send "&a당신에게 PVP 기본 키트를 지급하였습니다." to player
+            give 1 of netherite sword of sharpness 10 and smite 10 and knockback 2 and looting 10 and mending and unbreaking 10 to player
+            give 64 of obsidian to player
+            give 64 of end crystal to player
+            give 64 of respawn anchor to player
+            give 64 of glowstone to player
+            give 16 of ender pearl to player
+            give 64 of golden apple to player
+            give 1 of netherite pickaxe of efficiency 10 and fortune 10 and mending and unbreaking 3 to player
+            give 1 of totem of undying to player
+            equip player with netherite helmet of protection  and respiration 10 and mending and unbreaking 3
+            equip player with netherite chestplate of protection 1 and mending and unbreaking 3
+            equip player with netherite leggings of protection 1 and mending and unbreaking 3
+            equip player with netherite boots of protection 1 and mending and unbreaking 3
+            give 1 of netherite helmet of protection 4 and respiration 10 and mending and unbreaking 3 to player
+            give 1 of netherite chestplate of protection 4 and mending and unbreaking 3 to player
+            give 1 of netherite leggings of blast protection 1 and mending and unbreaking 3 to player
+            give 1 of netherite boots of protection 4 and mending and unbreaking 3 to player
+            give 15 of totem of undying to player
+            give 64 of obsidian to player
+            give 64 of end crystal to player
+            give 64 of respawn anchor to player
+            give 64 of glowstone to player
+            give 48 of ender pearl to player
+            give 1 of totem of undying to player
+        if arg-1 is not set:
+            send "&c오류! &e올바른 사용예시 : /kit basic"
+
+variables:
+    {Commands.%player%.BasicItem} = false
+
+command /basicitem:
+    trigger:
+        if {Commands.%player%.BasicItem} is false:
+            message "&a 당신은 기본템을 지급받았습니다."
+            give 1 Iron Helmet of protection 1 named "기본모자" with lore "오래되어 보이는 모자다.. 쓰는데는 지장없는듯하다" to player
+            give 1 Iron Chestplate of protection 1 named "기본갑옷" with lore "오래되어 보이는 갑옷이다.. 쓰는데는 지장없는듯하다" to player
+            give 1 Iron Leggings of protection 1 named "기본바지" with lore "오래되어 보이는 바지다.. 쓰는데는 지장없는듯하다" to player
+            give 1 Iron Boots of protection 1 named "기본신발" with lore "오래되어 보이는 신발이다.. 쓰는데는 지장없는듯하다" to player
+            give 1 Iron Sword of sharpness 1 named "기본검" with lore "손때가 묻어있는 오래된 검이다.. 꽤 튼튼한걸?" to player
+            give 1 Iron Axe of unbreaking 1 named "기본도끼" with lore "손때가 묻어있는 오래된 도끼다.. 나무 냄새가 나는걸?" to player
+            give 1 Iron Pickaxe of unbreaking 1 named "기본곡괭이" with lore "손때가 묻어있는 오래된 곡괭이다.. 낡긴해도 쓰는데는 지장 없겠네" to player
+            give 64 steak to player
+            set {Commands.%player%.BasicItem} to true
+        else:
+            message "&c당신은 이미 기본템을 받았습니다."    
+
+command /varbitem [<player>]:
+    trigger:
+        message "&a%arg-1%님의 기본템 함수값을 초기화 했습니다."
+        set {Commands.%player%.BasicItem} to false
+
+command /spawn:
+    trigger:
+        message "§a이 월드의 보호구역 / 스폰 으로 이동합니다"        
+        execute command "tp %player% 2 72 0"
+
+command /ender:
+    trigger:
+        if player is op:
+            message "§a이 서버의 엔드 세계로 이동합니다."
+            execute op command "execute in minecraft:the_end run tp %player% 0 65 0"
+        else:
+            message "§c당신은 관리자가 아니기 때문에 해당 명령어에 접근할 수 없습니다."         
+
+command /nether:
+    trigger:
+        if player is op:
+            message "§a이 서버의 네더 세계로 이동합니다."
+            execute op command "execute in minecraft:the_nether run tp %player% 0 65 0"
+        else:
+            message "§c당신은 관리자가 아니기 때문에 해당 명령어에 접근할 수 없습니다."         
+
+command /overworld:
+    trigger:
+        if player is op:
+            message "§a지 서버의 오버월드로 이동합니다."
+            execute op command "execute in minecraft:overworld run tp %player% 0 65 0"
+        else:
+            message "§c당신은 관리자가 아니기 때문에 해당 명령어에 접근할 수 없습니다."         
+
+command /enternit [<text>]:
+    trigger:
+        broadcast "§a[전체채팅 / %player%] §9%arg-1%"
+
+variables:
+    {Commands.%player%.Salvation} = true
+
+on command "/salvation":
+    wait 3 seconds
+    set {Commands.%player%.Salvation} to false
+
+command /salvation:
+    trigger:
+        if {Commands.%player%.Salvation} is true:
+            execute op command "heal"
+            execute op command "effect give %player% minecraft:resistance 360 99 true"
+            message "&e당신은 이 세계에세 당신에게 허락된 유일한 기회를 사용하여 구원받았습니다."
+        else:
+            message "&5당신은 당신에게 허락된 유일한 구원 기회를 이미 사용했습니다."
+
+command /varsalvate [<player>]:
+    trigger:
+        if player is op:
+            message "&a해당 유저의 구원 기회를 초기화 했습니다."
+            set {Commands.%arg-1%.Salvation} to true
+        else:
+            message "&c당신은 관리자가 아니기 때문에 해당 명령어에 접근할 수 없습니다."
+
+command /saturate:
+    trigger:
+        if player is op:
+            message "&a당신은 배고픔을 최대치로 수정합니다."
+            execute op command "/effect give %player% minecraft:saturation 120 99 true"
+        else:
+            message "&c당신은 관리자가 아니기 때문에 해당 명령어에 접근할 수 없습니다."
+
+variables:
+    {Commands.LobbySpawn} = "14 -52 -5"
+
+command /lobby:
+    aliases: /lb
+    trigger:
+        execute console command "mv tp %player% world"
+        execute console command "mv confirm"
+        execute console command "tp %player% %{Commands.LobbySpawn}%"
+        send title "&a서버 로비" with subtitle "&e서버의 중심점인 로비입니다!"
+
+command /survival:
+    aliases: /sv
+    trigger:
+        execute op command "mv tp %player% survival"
+        teleport player to {Survival.%player%.Location}
+
+command /pvp:
+    trigger:
+        message "&a메인 PVP서버로 이동했습니다."
+        send title "&3Crystal PVP" with subtitle "&e메인 PVP 서버입니다!" to player
+        execute console command "mv tp %player% pvp"
+        execute console command "mv confirm"
+        execute op command "tp 0 -4 15"
+
+command /gun [<string>]:
+    trigger:
+        if player is op:
+            if arg-1 is "pistol":
+                send "&a당신에게 권총을 지급하였습니다."
+                give 1 of stick named "&3[ 권총 ] P187" with lore "&e기본 권총입니다." to player
+            if arg-1 is "machine":
+                send "&c당신에게 기관총을 지급하였습니다."
+                give 1 of blaze rod named "&c[ 기관총 ] M249" with lore "&e모든 것을 부숴버린다. 기본 기관총입니다." to player
+            if arg-1 is "sniper":
+                send "&2당신에게 저격총을 지급했습니다."
+                give 1 of stick named "&2[ 저격총 ] AWP" with lore "&e기본 저격총이다." to player
+        if player is not op:
+            send "&c당신은 관리자가 아니기 때문에 해당 명령어에 접근 할 수 없습니다." to player
+
+on right click with stick:
+    if player is op:
+        if player's tool is stick named "&3[ 권총 ] P187":
+            send "&a당신의 무기 &c[ 권총 ] P187 &a을 발사합니다."
+            make the player shoot a snowball at speed 5
+        if player's tool is stick named "&2[ 저격총 ] AWP":
+            send "&e당신의 무기 &c[ 저격총 ] AWP &e를 발사하였습니다."
+            make the player shoot tipped arrow at speed 6
+    if player is not op:
+        message "&c당신은 관리자가 아니기 때문에 해당 명령어에 접근 할 수 없습니다."
+
+on right click with blaze rod:
+    if player is op:        
+        if player's tool is blaze rod named "&c[ 기관총 ] M249":
+            send "&c당신의 무기 &c[ 기관총 ] M249를 발사합니다."
+            make the player shoot a fireball
+
+on death:
+  set {deathlocation.%uuid of victim%} to victim's location
+  send "&a당신의 죽은 위치가 %{deathlocation.%uuid of victim%}%으로 저장되었습니다." to victim
+
+on death of player:
+    if victim's world is "pvp":
+        wait 0.1 seconds
+        execute victim command "tp %victim% 0 -4 15"
+
+command /back:
+  trigger:
+    teleport the player to {deathlocation.%uuid of player%}
+    send "&a당신이 마지막으로 죽은 위치로 이동합니다." to player
+
+on quit:
+  delete {deathlocation.%uuid of player%}
+
+command /teeest:
+    trigger:
+        execute op command "tp %player% 0 -4 15"
+
+command /top:
+  trigger:
+    if player's world is not "pvp":
+        set {_PlayerData.Location} to location of player
+        set y-coord of {_PlayerData.Location} to 256
+        loop 256 times:
+        if y-coord of {_PlayerData.Location} is y-coord of location at player:
+            message "&a당신은 이미 당신이 위치한 곳의 가장 높은 블럭에 위치해 있습니다."
+            stop
+        if block at {_PlayerData.Location} is a solid block:
+            teleport player to block above {_PlayerData.Location}
+            message "&6당신이 있는 X와 Z 좌표중 가장 높은 블럭으로 이동합니다."
+            stop
+        else:
+            remove 1 from y-coord of {_PlayerData.Location}
+    if player's world is "pvp":
+        send "&c그곳에서는 해당 명령어를 사용할 수 없습니다." to player

@@ -1,0 +1,29 @@
+command /이동기:
+	trigger:
+		open chest with 5 rows named "&1서버 이동기" to player
+		set slot 0 of current inventory of player to blue stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 1 of current inventory of player to red stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 2 of current inventory of player to blue stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 3 of current inventory of player to red stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 4 of current inventory of player to blue stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 5 of current inventory of player to red stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 6 of current inventory of player to blue stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 7 of current inventory of player to red stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 8 of current inventory of player to blue stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 36 of current inventory of player to blue stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 37 of current inventory of player to red stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 38 of current inventory of player to blue stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 39 of current inventory of player to red stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 40 of current inventory of player to blue stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 41 of current inventory of player to red stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 42 of current inventory of player to blue stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 43 of current inventory of player to red stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 44 of current inventory of player to blue stained glass pane named "&6서버 이동기" with lore "&e원하는 위치를 눌러주세요"
+		set slot 19 of current inventory of player to clock named "&1로비" with lore "&e서버의 중심인 로비로 이동합니다"
+
+on inventory click:
+	if inventory name of event-inventory contains "&1서버 이동기":
+		if clicked slot is 19:
+			cancel event
+			close player's inventory
+			execute player command "lobby"

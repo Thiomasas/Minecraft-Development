@@ -1,0 +1,32 @@
+options:
+    a : &3[ &eCalculation System &3]
+
+command /calculator [<string>] [<string>] [<string>]:
+    trigger:
+        if arg-2 is integer:
+            if arg-1 is not set:
+                send "{@a} &8>> &c에러! &f/calculator help 로 계산 시스템 도움말 확인"
+            if arg-1 is "help":
+                send "{@a} &8>> &f/calculator <&caddition&f, &3subtract&f, &5multiply&f, &6division&f, &bsquared&f> <&einteger&f> <&einteger&f>"
+            if arg-1 is "addition":
+                set {_Calc.%player%.Integer1} to arg-2
+                set {_Calc.%player%.Integer2} to arg-3
+                send "{@a} &8>> &f계산결과가 나왔습니다. 결과는 &a&l[ %{_Calc.%player%.Integer1}+{_Calc.%player%.Integer2}% ] &f입니다."
+            if arg-1 is "subtract":
+                set {_Calc.%player%.Integer1} to arg-2
+                set {_Calc.%player%.Integer2} to arg-3
+                send "{@a} &8>> &f계산결과가 나왔습니다. 결과는 &a&l[ %{_Calc.%player%.Integer1}-{_Calc.%player%.Integer2}% ] &f입니다."
+            if arg-1 is "multiply":
+                set {_Calc.%player%.Integer1} to arg-2
+                set {_Calc.%player%.Integer2} to arg-3
+                send "{@a} &8>> &f계산결과가 나왔습니다. 결과는 &a&l[ %{_Calc.%player%.Integer1}*{_Calc.%player%.Integer2}% ] &f입니다."
+            if arg-1 is "division":
+                set {_Calc.%player%.Integer1} to arg-2
+                set {_Calc.%player%.Integer2} to arg-3
+                send "{@a} &8>> &f계산결과가 나왔습니다. 결과는 &a&l[%{_Calc.%player%.Integer1}/{_Calc.%player%.Integer2}% ] &f입니다."
+            if arg-1 is "squared":
+                set {_Calc.%player%.Integer1} to arg-2
+                set {_Calc.%player%.Integer2} to arg-3
+                send "{@a} &8>> &f계산결과가 나왔습니다. 결과는 &a&l[ %{_Calc.%player%.Integer1}^{_Calc.%player%.Integer2}% ] &f입니다."
+        if arg-2 is not integer:
+            send "{@a} &8>> &c에러! &f/calculator help 로 계산 시스템 도움말 확인"

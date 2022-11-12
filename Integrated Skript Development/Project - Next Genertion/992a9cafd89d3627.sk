@@ -1,0 +1,86 @@
+variables:
+	{%player%.house} = 0
+
+
+command /집:
+	trigger:
+		if {%player%.house} is 0:
+			message "당신은 아직 아무 집도 가지고 있지 않습니다"
+		if {%player%.house} is not 0:
+			message "당신은 현재 집%{%player%.house}%를 가지고 있습니다!
+
+command /부동산:
+	trigger:
+		open chest with 5 rows named "&1부동산 목록" to player
+		set slot 0 of current inventory of player to blue stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 1 of current inventory of player to red stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 2 of current inventory of player to blue stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 3 of current inventory of player to red stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 4 of current inventory of player to blue stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 5 of current inventory of player to red stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 6 of current inventory of player to blue stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 7 of current inventory of player to red stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 8 of current inventory of player to blue stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 36 of current inventory of player to blue stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 37 of current inventory of player to red stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 38 of current inventory of player to blue stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 39 of current inventory of player to red stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 40 of current inventory of player to blue stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 41 of current inventory of player to red stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 42 of current inventory of player to blue stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 43 of current inventory of player to red stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		set slot 44 of current inventory of player to blue stained glass pane named "&6부동산" with lore "&e구매하고 싶으신 집을 클릭해 주세요"
+		if {house1} is 0:
+			set slot 9 of current inventory of player to black wool named "&1집1" with lore "&e이집은 현재 비어있습니다!"
+		if {house1} is 1:
+			set slot 9 of current inventory of player to green wool named "&1집1" with lore "&e이집은 현재 누군가가 살고 있습니다!"
+		if {%player%.house} is 1:
+			set slot 9 of current inventory of player to blue wool named "&1집1" with lore "&e이집은 당신의 집입니다!"
+		if {house2} is 0:
+			set slot 10 of current inventory of player to black wool named "&1집2" with lore "&e이집은 현재 비어있습니다!"
+		if {house2} is 1:
+			set slot 10 of current inventory of player to green wool named "&1집2" with lore "&e이집은 현재 누군가가 살고 있습니다!"
+		if {%player%.house} is 2:
+			set slot 10 of current inventory of player to blue wool named "&1집2" with lore "&e이집은 당신의 집입니다!"
+		if {house3} is 0:
+			set slot 11 of current inventory of player to black wool named "&1집3" with lore "&e이집은 현재 비어있습니다!"
+		if {house3} is 1:
+			set slot 11 of current inventory of player to green wool named "&1집3" with lore "&e이집은 현재 누군가가 살고 있습니다!"
+		if {%player%.house} is 3:
+			set slot 11 of current inventory of player to blue wool named "&1집3" with lore "&e이집은 당신의 집입니다!"
+		if {house4} is 0:
+			set slot 12 of current inventory of player to black wool named "&1집4" with lore "&e이집은 현재 비어있습니다!"
+		if {house4} is 1:
+			set slot 12 of current inventory of player to green wool named "&1집4" with lore "&e이집은 현재 누군가가 살고 있습니다!"
+		if {%player%.house} is 4:
+			set slot 12 of current inventory of player to blue wool named "&1집4" with lore "&e이집은 당신의 집입니다!"
+		if {house5} is 0:
+			set slot 13 of current inventory of player to black wool named "&1집5" with lore "&e이집은 현재 비어있습니다!"
+		if {house5} is 1:
+			set slot 13 of current inventory of player to green wool named "&1집5" with lore "&e이집은 현재 누군가가 살고 있습니다!"
+		if {%player%.house} is 5:
+			set slot 13 of current inventory of player to blue wool named "&1집5" with lore "&e이집은 당신의 집입니다!"
+		if {house6} is 0:
+			set slot 14 of current inventory of player to black wool named "&1집6" with lore "&e이집은 현재 비어있습니다!"
+		if {house6} is 1:
+			set slot 14 of current inventory of player to green wool named "&1집6" with lore "&e이집은 현재 누군가가 살고 있습니다!"
+		if {%player%.house} is 6:
+			set slot 14 of current inventory of player to blue wool named "&1집6" with lore "&e이집은 당신의 집입니다!"
+		if {house7} is 0:
+			set slot 15 of current inventory of player to black wool named "&1집7" with lore "&e이집은 현재 비어있습니다!"
+		if {house7} is 1:
+			set slot 15 of current inventory of player to green wool named "&1집7" with lore "&e이집은 현재 누군가가 살고 있습니다!"
+		if {%player%.house} is 7:
+			set slot 15 of current inventory of player to blue wool named "&1집7" with lore "&e이집은 당신의 집입니다!"
+		if {house8} is 0:
+			set slot 16 of current inventory of player to black wool named "&1집8" with lore "&e이집은 현재 비어있습니다!"
+		if {house8} is 1:
+			set slot 16 of current inventory of player to green wool named "&1집8" with lore "&e이집은 현재 누군가가 살고 있습니다!"
+		if {%player%.house} is 8:
+			set slot 16 of current inventory of player to blue wool named "&1집8" with lore "&e이집은 당신의 집입니다!"
+		if {house9} is 0:
+			set slot 17 of current inventory of player to black wool named "&1집9" with lore "&e이집은 현재 비어있습니다!"
+		if {house9} is 1:
+			set slot 17 of current inventory of player to green wool named "&1집9" with lore "&e이집은 현재 누군가가 살고 있습니다!"
+		if {%player%.house} is 9:
+			set slot 17 of current inventory of player to blue wool named "&1집9" with lore "&e이집은 당신의 집입니다!"

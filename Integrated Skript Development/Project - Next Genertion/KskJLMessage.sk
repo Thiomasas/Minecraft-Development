@@ -1,0 +1,9 @@
+on first join:
+	add 1 to {신규접속자}
+	set join massage to "&2%player% &7님이 서버에 처음 등장했습니다! 박수로 환영해 주세요! 지금까지의 신규접속자는 모두 %{신규접속자}% 명 입니다!"
+
+on join:
+	set player's join massage to "&2%player% &7님이 서버에 등장했습니다!"
+
+on quit:
+	set player's quit massage to "&2%player% &7님이 서버에서 퇴장했습니다! 다음에 봐요!"
