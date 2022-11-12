@@ -1,2 +1,0 @@
-on server list ping:
-	set motd to formatted "                 &c토<##de3f5e>마<##be3f7e>스 <##9e3f9e>야<##7e3fbe>생 <##5e3fde>서&9버"
